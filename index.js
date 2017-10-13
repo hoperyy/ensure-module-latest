@@ -1,4 +1,4 @@
-module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://registry.npmjs.org/' } = {}) => {
+module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://registry.npmjs.org/', beforeInstall = (cwd) => {} } = {}) => {
     return new Promise((resolve) => {
         const fs = require('fs');
         const path = require('path');
@@ -17,19 +17,25 @@ module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://re
         }
 
         function installModule() {
-            if (fs.existsSync(cwd)) {
-                fse.removeSync(cwd);
-            }
+            beforeInstall(cwd);
 
-            writeFileSync(path.join(cwd, 'package.json'), JSON.stringify({
-                name: 'installing-module',
-                version: '1.0.0',
-            }));
+            const pkgJsonExists = fs.existsSync(path.join(cwd, 'package.json'));
+
+            if (!pkgJsonExists) {
+                writeFileSync(path.join(cwd, 'package.json'), JSON.stringify({
+                    name: 'installing-module',
+                    version: '1.0.0',
+                }));
+            } 
 
             try {
                 childProcess.execSync(`npm --registry ${registry} install ${moduleName}@latest`, { cwd, stdio: 'inherit' });
             } catch (err) {
                 throw Error(err);
+            }
+
+            if (!pkgJsonExists) {
+                fse.removeSync(path.join(cwd, 'package.json'));
             }
         }
 

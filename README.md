@@ -28,5 +28,9 @@ ensureModuleLatest({
     +   Type: String
     +   Desc: npm module
     +   default: `'https://registry.npmjs.org/'`
++   `beforeInstall`
+    +   Type: Function
+    +   Desc: do something before install module
+    +   default: `(cwd) => {}`
 
 ## @return `Promise Object`
