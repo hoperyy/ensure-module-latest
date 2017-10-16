@@ -26,7 +26,7 @@ ensureModuleLatest({
     +   default: `process.cwd()`
 +   `registry`
     +   Type: String
-    +   Desc: npm module
+    +   Desc: npm registry
     +   default: `'https://registry.npmjs.org/'`
 +   `beforeInstall`
     +   Type: Function
