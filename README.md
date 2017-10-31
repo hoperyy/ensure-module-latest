@@ -5,7 +5,7 @@ This tool will ensure npm module exists and being latest at local.
 ## How to use
 
 ```
-const ensureModuleLatest = require(ensure-module-latest);
+const ensureModuleLatest = require('ensure-module-latest');
 
 ensureModuleLatest({
     moduleName: 'zepto',
