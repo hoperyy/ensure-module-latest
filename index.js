@@ -1,4 +1,4 @@
-module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://registry.npmjs.org/', beforeInstall = (cwd) => {} } = {}) => {
+module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://registry.npmjs.org/', beforeInstall = () => {} } = {}) => {
     return new Promise((resolve) => {
         const fs = require('fs');
         const path = require('path');
@@ -26,7 +26,7 @@ module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://re
                     name: 'installing-module',
                     version: '1.0.0',
                 }));
-            } 
+            }
 
             try {
                 childProcess.execSync(`npm --registry ${registry} install ${moduleName}@latest`, { cwd, stdio: 'inherit' });
