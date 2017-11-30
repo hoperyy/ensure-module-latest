@@ -1,4 +1,4 @@
-[![Npm Version](https://img.shields.io/badge/npm-%3E%3D%203.3.1-brightgreen.svg)] (https://img.shields.io/badge/node-%3E%3D%206.9.1-brightgreen.svg)](https://nodejs.org/en/) [![Build Status]
+[![Npm Version](https://img.shields.io/badge/npm-%3E%3D%203.3.1-brightgreen.svg)](https://www.npmjs.com/package/get-npm-package-version) [![Node Version](https://img.shields.io/badge/node-%3E%3D%206.9.1-brightgreen.svg)](https://nodejs.org/en/) 
 
 ## What is `ensure-module-latest`
 
