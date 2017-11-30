@@ -1,3 +1,5 @@
+[![Npm Version](https://img.shields.io/badge/npm-%3E%3D%203.3.1-brightgreen.svg)] (https://img.shields.io/badge/node-%3E%3D%206.9.1-brightgreen.svg)](https://nodejs.org/en/) [![Build Status]
+
 ## What is `ensure-module-latest`
 
 This tool will ensure npm module exists and being latest at local.
