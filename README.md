@@ -36,3 +36,7 @@ ensureModuleLatest({
     +   default: `(cwd) => {}`
 
 ## @return `Promise Object`
+
+## LICENSE
+
+MIT
