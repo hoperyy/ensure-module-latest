@@ -53,6 +53,7 @@ module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://re
             currentVersion += '';
 
             if (latestVersion && latestVersion !== 'null' && latestVersion !== currentVersion) {
+                console.log(`${moduleName.green} currentVersion: ${currentVersion}; latestVersion: ${latestVersion};`);
                 console.log(`updating ${moduleName}...`);
                 installModule();
                 console.log(`${moduleName} updated\n`);
