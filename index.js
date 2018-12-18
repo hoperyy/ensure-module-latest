@@ -29,7 +29,7 @@ module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://re
             }
 
             try {
-                childProcess.execSync(`npm --registry ${registry} install ${moduleName}@latest`, { cwd, stdio: 'inherit' });
+                childProcess.execSync(`npm --registry ${registry} install ${moduleName}@latest --silent`, { cwd, stdio: 'inherit' });
             } catch (err) {
                 throw Error(err);
             }
@@ -53,7 +53,7 @@ module.exports = ({ moduleName = '', cwd = process.cwd(), registry = 'https://re
             currentVersion += '';
 
             if (latestVersion && latestVersion !== 'null' && latestVersion !== currentVersion) {
-                console.log(`${moduleName.green} currentVersion: ${currentVersion}; latestVersion: ${latestVersion};`);
+                console.log(`${moduleName} currentVersion: ${currentVersion}; latestVersion: ${latestVersion};`);
                 console.log(`updating ${moduleName}...`);
                 installModule();
                 console.log(`${moduleName} updated\n`);
