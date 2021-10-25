@@ -1,4 +1,4 @@
-module.exports = ({ moduleName = '', cwd = process.cwd(), silent = true, registry = 'https://registry.npmjs.org/', beforeInstall = () => {} } = {}) => {
+module.exports = ({ moduleName = '', cwd = process.cwd(), timeout = 1000, silent = true, registry = 'https://registry.npmjs.org/', beforeInstall = () => {} } = {}) => {
     return new Promise((resolve) => {
         const fs = require('fs');
         const path = require('path');
@@ -42,7 +42,7 @@ module.exports = ({ moduleName = '', cwd = process.cwd(), silent = true, registr
         function ensureModuleLatest(modulePath) {
             let latestVersion = getNpmPackageVersion(moduleName, {
                 registry,
-                timeout: 2000,
+                timeout,
             });
 
             latestVersion += '';

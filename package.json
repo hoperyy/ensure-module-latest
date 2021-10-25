@@ -1,13 +1,20 @@
 {
   "name": "ensure-module-latest",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "eslint index.js"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoperyy/ensure-module-latest.git"
+  },
+  "author": "https://github.com/hoperyy",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoperyy/ensure-module-latest/issues"
+  },
   "dependencies": {
     "commander": "^2.11.0",
     "fs-extra": "^4.0.2",
